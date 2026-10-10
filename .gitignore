@@ -1,0 +1,27 @@
+# data (large / third party): keep only the instructions
+data/*
+!data/README.md
+
+# model weights over the 100 MB GitHub limit
+neural_network/checkpoints/*
+!neural_network/checkpoints/.gitkeep
+baseline_models/random_forest_model.joblib
+*.pth
+*.pt
+*.ckpt
+
+# generated artefacts (a fitted TfidfVectorizer can be very large)
+baseline_models/tfidf_vectorizer_tree.joblib
+baseline_models/subreddit_stats.joblib
+
+# secrets and environments
+.env
+*.key
+venv/
+.venv/
+
+# python / jupyter / os
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
+.DS_Store
